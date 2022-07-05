@@ -4,6 +4,7 @@
 
  const fs = require('fs');
  const NotesView = require('./NotesView')
+ const NotesModel = require('./notesModel')
 
 describe('displayNotes', () => {
   beforeEach(() => {
@@ -11,13 +12,14 @@ describe('displayNotes', () => {
   });
 
   it('it displays notes from the notesModel', () => {
-    const mockedNotesModel = { 
-      getNotes: () => {
-        return ['Wash the car', 'Water the plants']
-      }
-    }
-    const view = new NotesView(mockedNotesModel);
-    view.displayNotes();
-    expect(document.querySelectorAll('.note').length).toBe(2);
+    const model = new NotesModel();
+    const view = new NotesView(model);
+    const messageBox = document.querySelector('#message-input')
+    messageBox.value = 'wash the car';
+    const button = document.querySelector('#add-note-button');
+    button.click();
+    
+    expect(document.querySelectorAll('div.note').length).toEqual(1);
+    expect(document.querySelectorAll('div.note')[0].innerText).toEqual('wash the car');
   })
 })
