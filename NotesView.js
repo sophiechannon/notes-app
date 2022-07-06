@@ -15,12 +15,20 @@ class NotesView {
   }
 
   displayNotes() {
+    this._clearNotes();
     const allNotes = this.model.getNotes()
     allNotes.forEach(element => {
       let div = document.createElement('div');
       div.className = "note";
       div.innerText = element;
       this.notesEl.append(div);
+    })
+  }
+
+  _clearNotes(){
+    const displayedNotes = document.querySelectorAll('div.note');
+    displayedNotes.forEach(element => {
+      element.remove();
     })
   }
 }
