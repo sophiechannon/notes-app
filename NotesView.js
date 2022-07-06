@@ -4,8 +4,9 @@ class NotesView {
     this.notesEl = document.querySelector('#notes');
     this.addNoteButton = document.querySelector('#add-note-button');
     this.addNoteButton.addEventListener('click', () => {
-      const note = document.querySelector('#message-input').value;
-      this.addNewNote(note);
+      const note = document.querySelector('#message-input');
+      this.addNewNote(note.value);
+      note.value = "";
     })
   }
 

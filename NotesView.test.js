@@ -36,5 +36,6 @@ describe('displayNotes', () => {
     expect(document.querySelectorAll('div.note').length).toEqual(2);
     expect(document.querySelectorAll('div.note')[0].innerText).toEqual('wash the car');
     expect(document.querySelectorAll('div.note')[1].innerText).toEqual('walk the dog');
+    expect(messageBox.value).toEqual("");
   })
 })
