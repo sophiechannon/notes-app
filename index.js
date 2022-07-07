@@ -1,8 +1,12 @@
+const NotesApi = require('./notesApi');
+const api = new NotesApi();
 const NotesModel = require('./notesModel');
 const model = new NotesModel();
 const NotesView = require('./NotesView')
-const view = new NotesView(model);
+const view = new NotesView(model, api);
+
+
 
 console.log('The notes app is running');
 console.log(model.getNotes());
-// view.displayNotes();
+view.displayNotesFromApi();

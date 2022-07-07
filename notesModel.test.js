@@ -20,4 +20,11 @@ describe("NotesModel", () => {
     model.reset();
     expect(model.getNotes()).toEqual([]);
   });
+
+  it("should set notes array", () => {
+    const model = new NotesModel();
+    model.addNote('Buy milk');
+    model.setNotes(['Go to the gym', 'Wash hair']);
+    expect(model.getNotes()).toEqual(['Buy milk', 'Go to the gym', 'Wash hair']);
+  });
 });
