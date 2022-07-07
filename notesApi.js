@@ -8,7 +8,7 @@ class NotesApi {
   }
 
   createNote(note) {
-    const data = { "noteMessage": note };
+    const data = { content: note };
     fetch('http://localhost:3000/notes', {
       method: 'POST', 
       headers: {
@@ -17,11 +17,14 @@ class NotesApi {
       body: JSON.stringify(data),
     })  
     .then(response => {
-      response.json()
+      return response.json()
     })
     .then(cat => {
       console.log('Success:', cat);
     })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
   }
 }
 

@@ -18,19 +18,15 @@ describe('API class', () => {
   });
     
     
-  describe('createNote()', () => {
-    it('POSTs a note to server', () => {
-      const api = new NotesApi();
-      fetch.mockResponseOnce(JSON.stringify({
-        noteMessage: "Some value"
-      }));
-
-      api.createNote("Some value");
-
-      api.loadData((returnedDataFromApi) => {
-        expect(returnedDataFromApi.noteMessage).toBe("Some value");
-      });
-
-    })
-  })
+  // it('posts data to server', () => {
+  //   const api = new NotesApi();
+  //   api.createNote('This is a new 🪪 note')
+  //   expect(fetch).toHaveBeenCalledWith('http://localhost:3000/notes',{
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify('This is a new 🪪 note')
+  //   })
+  // })
 });
