@@ -7,6 +7,7 @@ class NotesView {
     this.addNoteButton.addEventListener('click', () => {
       const note = document.querySelector('#message-input');
       this.addNewNote(note.value);
+      this.api.createNote(note);
       note.value = "";
     })
   }

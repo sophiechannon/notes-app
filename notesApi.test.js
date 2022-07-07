@@ -27,9 +27,9 @@ describe('API class', () => {
 
       api.createNote("Some value");
 
-      // api.loadData((returnedDataFromApi) => {
-      //   expect(returnedDataFromApi.noteMessage).toBe("Some value");
-      // });
+      api.loadData((returnedDataFromApi) => {
+        expect(returnedDataFromApi.noteMessage).toBe("Some value");
+      });
 
     })
   })
