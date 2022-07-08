@@ -9,6 +9,10 @@ class NotesView {
       this.addNewNote(note.value);
       note.value = "";
     })
+    this.deleteNotesButton = document.querySelector('#delete-note-button');
+    this.deleteNotesButton.addEventListener('click', () => {
+      this.reset();
+    })
   }
 
   addNewNote(note) {
@@ -44,7 +48,12 @@ class NotesView {
     })
   }
 
-  _clearNotes(){
+  reset() {
+    this.api.deleteNotes();
+    this.displayNotesFromApi();
+    }
+
+  _clearNotes() {
     const displayedNotes = document.querySelectorAll('div.note');
     displayedNotes.forEach(element => {
       element.remove();

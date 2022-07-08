@@ -87,6 +87,22 @@ describe('displayNotes', () => {
       expect(document.querySelectorAll('div.note')[0].innerText).toEqual("Joe I made it work!");
     })
   })
+
+  describe('reset', () => {
+    it('resets notes on the server', () => {
+      const mockedApi = {
+        loadData: () => {
+          model.setNotes(['Joe I made it work!']);
+          view.displayNotes();
+        }
+      }
+      const model = new NotesModel();
+      const view = new NotesView(model, mockedApi);
+      const button = document.querySelector('#delete-note-button');
+      button.click();
+      expect(document.querySelectorAll('div.note').length).toEqual(0);
+    })
+  })
 })
 
 
