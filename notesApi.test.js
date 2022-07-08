@@ -18,15 +18,15 @@ describe('API class', () => {
   });
     
     
-  // it('posts data to server', () => {
-  //   const api = new NotesApi();
-  //   api.createNote('This is a new 🪪 note')
-  //   expect(fetch).toHaveBeenCalledWith('http://localhost:3000/notes',{
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify('This is a new 🪪 note')
-  //   })
-  // })
+  it('posts data to server', () => {
+    const api = new NotesApi();
+    api.createNote('This is a new note')
+    expect(fetch).toHaveBeenCalledWith('http://localhost:3000/notes',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: '{"content":"This is a new note"}'
+    })
+  })
 });

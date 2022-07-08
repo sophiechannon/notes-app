@@ -19,8 +19,8 @@ class NotesApi {
     .then(response => {
       return response.json()
     })
-    .then(cat => {
-      console.log('Success:', cat);
+    .then(data => {
+      console.log('Success:', data);
     })
     .catch((error) => {
       console.error('Error:', error);
