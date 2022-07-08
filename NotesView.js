@@ -18,7 +18,10 @@ class NotesView {
   }
 
   displayError() {
-
+    let div = document.createElement('div');
+    div.className = "error";
+    div.innerText = "Oops I did it again. I broke your network. I cracked your blockchain";
+    this.notesEl.append(div);
   }
 
   displayNotes() {
@@ -36,6 +39,8 @@ class NotesView {
     this.api.loadData(data => {
       this.model.setNotes(data);
       this.displayNotes();
+    }, () => {
+      this.displayError();
     })
   }
 

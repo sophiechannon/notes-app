@@ -66,10 +66,7 @@ describe('displayNotes', () => {
         }
       }
       const view = new NotesView(model, api);
-      const messageBox = document.querySelector('#message-input');
-      messageBox.value = "Eat my shorts";
-      const button = document.querySelector('#add-note-button');
-      button.click();
+      view.displayError();
       expect(document.querySelectorAll('div.error').length).toEqual(1);
       expect(document.querySelectorAll('div.error')[0].innerText).toEqual("Oops I did it again. I broke your network. I cracked your blockchain");
     })
