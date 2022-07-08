@@ -1,0 +1,44 @@
+h1 {
+  font-family: 'Pacifico', cursive;
+}
+
+html {
+  background:#8ae2ff;
+  background-image: url(images/image.png);
+}
+
+body {
+  background: white;
+  width: 600px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.note {
+  border-bottom: 1px solid #aaa;
+  padding: 15px;
+  font-family: 'Indie Flower', cursive;
+}
+
+input[type=text] {
+  width: 80%;
+  background: #fefefe;
+  border-radius: 4px;
+  padding: 10px 8px;
+  border: 1px solid #444;
+  font-size: 20px;
+}
+
+button {
+  background: url(images/btn-image.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  padding: 10px 8px;
+  border: 1px solid #444;
+  font-size: 18px;
+  cursor: pointer;
+  color: transparent;
+}
