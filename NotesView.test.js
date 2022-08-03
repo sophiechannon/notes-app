@@ -38,4 +38,15 @@ describe('displayNotes', () => {
     expect(document.querySelectorAll('div.note')[1].innerText).toEqual('walk the dog');
     expect(messageBox.value).toEqual("");
   })
+
+  it('displays notes from the api', () => {
+    const fakeApi = {
+      loadNotes: () => ['This is a fake note']
+    }
+    const model = new NotesModel();
+    const view = new NotesView(model, fakeApi);
+
+    view.displayNotesFromApi()
+    expect(document.querySelectorAll('div.note')[0].innerText).toEqual('This is a fake note');
+  })
 })
